@@ -22,6 +22,9 @@ namespace IRF_projekt
             exit_timer.Interval = 1000;
             exit_timer.Start();
             lblexit.Text = counter.ToString();
+            XmlDocument xml = new XmlDocument();
+            xml.Load("autok.xml");
+
             
             
         }

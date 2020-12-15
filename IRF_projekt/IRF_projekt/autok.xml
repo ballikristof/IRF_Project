@@ -1,0 +1,28 @@
+<?xml version='1.0' ?>
+
+<autok>
+	<auto>
+		<marka>Honda</marka>
+		<tipus>Civic</tipus>
+		<evjarat>1999</evjarat>
+		<szin>piros</szin>
+	</auto>
+	<auto>
+		<marka>Toyota</marka>
+		<tipus>Prius</tipus>
+		<evjarat>2009</evjarat>
+		<szin>szürke</szin>
+	</auto>
+	<auto>
+		<marka>Audi</marka>
+		<tipus>A5</tipus>
+		<evjarat>2003</evjarat>
+		<szin>piros</szin>
+	</auto>
+	<auto>
+		<marka>Audi</marka>
+		<tipus>A5</tipus>
+		<evjarat>2003</evjarat>
+		<szin>piros</szin>
+	</auto>
+</autok>
