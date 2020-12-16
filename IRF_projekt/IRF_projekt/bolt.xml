@@ -1,0 +1,16 @@
+<?xml version='1.0' ?>
+
+<bolt>
+	<termék megnevezes="kenyér">
+		<info beszerzesi="100 HUF" eladási="200 HUF" mennyiseg="1 kg"></info>
+	</termék>
+	<termék megnevezes="tej">
+		<info beszerzesi="150 HUF" eladási="250 HUF" mennyiseg="1 liter"></info>
+	</termék>
+	<termék megnevezes="szalonna">
+		<info beszerzesi="800 HUF" eladási="1500 HUF" mennyiseg="0,5 kg"></info>
+	</termék>
+	<termék megnevezes="sör">
+		<info beszerzesi="140 HUF" eladási="290 HUF" mennyiseg="0,5 liter"></info>
+	</termék>
+</bolt>

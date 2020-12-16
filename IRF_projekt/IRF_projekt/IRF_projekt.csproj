@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Entities\cars.cs" />
     <Compile Include="Entities\people.cs" />
+    <Compile Include="Entities\store.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +84,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="autok.xml" />
+    <Content Include="bolt.xml" />
     <Content Include="emberek.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

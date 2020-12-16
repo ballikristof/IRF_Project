@@ -18,6 +18,7 @@ namespace IRF_projekt
         public int counter = 300;
         BindingList<cars> Auto_data = new BindingList<cars>();
         BindingList<people> People_data = new BindingList<people>();
+        BindingList<store> Store_data = new BindingList<store>();
         public Form1()
         {
             InitializeComponent();
@@ -38,7 +39,7 @@ namespace IRF_projekt
             
         }
 
-        private void btn_save_Click(object sender, EventArgs e)
+        private void car_btn_save_Click(object sender, EventArgs e)
         {
             SaveFileDialog sfd = new SaveFileDialog();
 
@@ -109,6 +110,76 @@ namespace IRF_projekt
                 person.Vezetéknév = childElement.GetAttribute("vezeteknev");
                 person.Keresztnév = childElement.GetAttribute("keresztnev");
                 person.Email = childElement.GetAttribute("email");
+            }
+        }
+
+        private void people_btn_save_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+
+            sfd.InitialDirectory = Application.StartupPath;
+            sfd.Filter = "Comma Seperated Values (*.csv)|*.csv";
+            sfd.DefaultExt = "csv";
+            sfd.AddExtension = true;
+
+            if (sfd.ShowDialog() != DialogResult.OK) return;
+
+            using (FileStream fs = new FileStream(sfd.FileName, FileMode.Create))
+            {
+                using (StreamWriter sw = new StreamWriter(fs, Encoding.UTF8))
+                {
+                    foreach (people people in People_data)
+                    {
+                        sw.WriteLine("{0};{1};{2};{3}",
+                        people.Életkor, people.Vezetéknév, people.Keresztnév, people.Email);
+                    }
+                }
+            }
+        }
+
+        private void store_btn_Click(object sender, EventArgs e)
+        {
+            Store_data.Clear();
+            XmlDocument xml = new XmlDocument();
+            xml.Load("bolt.xml");
+            dataGridView1.DataSource = Store_data;
+
+
+            foreach (XmlElement element in xml.DocumentElement)
+            {
+                var product = new store();
+                Store_data.Add(product);
+
+                product.Termék = element.GetAttribute("megnevezes");
+
+                var childElement = (XmlElement)element.ChildNodes[0];
+                product.Beszerzési_ár = childElement.GetAttribute("beszerzesi");
+                product.Eladási_ár = childElement.GetAttribute("eladási");
+                product.Mennyiség = childElement.GetAttribute("mennyiseg");
+            }
+        }
+
+        private void store_btn_save_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+
+            sfd.InitialDirectory = Application.StartupPath;
+            sfd.Filter = "Comma Seperated Values (*.csv)|*.csv";
+            sfd.DefaultExt = "csv";
+            sfd.AddExtension = true;
+
+            if (sfd.ShowDialog() != DialogResult.OK) return;
+
+            using (FileStream fs = new FileStream(sfd.FileName, FileMode.Create))
+            {
+                using (StreamWriter sw = new StreamWriter(fs, Encoding.UTF8))
+                {
+                    foreach (store product in Store_data)
+                    {
+                        sw.WriteLine("{0};{1};{2};{3}",
+                        product.Termék, product.Beszerzési_ár, product.Eladási_ár, product.Mennyiség);
+                    }
+                }
             }
         }
     }

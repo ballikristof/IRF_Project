@@ -30,13 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btn_save = new System.Windows.Forms.Button();
+            this.car_btn_save = new System.Windows.Forms.Button();
             this.exit_timer = new System.Windows.Forms.Timer(this.components);
             this.lblexit = new System.Windows.Forms.Label();
             this.reset_btn = new System.Windows.Forms.Button();
             this.car_btn = new System.Windows.Forms.Button();
             this.people_btn = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.store_btn = new System.Windows.Forms.Button();
+            this.people_btn_save = new System.Windows.Forms.Button();
+            this.store_btn_save = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,15 +52,15 @@
             this.dataGridView1.Size = new System.Drawing.Size(714, 272);
             this.dataGridView1.TabIndex = 0;
             // 
-            // btn_save
+            // car_btn_save
             // 
-            this.btn_save.Location = new System.Drawing.Point(12, 323);
-            this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(75, 33);
-            this.btn_save.TabIndex = 1;
-            this.btn_save.Text = "Mentés";
-            this.btn_save.UseVisualStyleBackColor = true;
-            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
+            this.car_btn_save.Location = new System.Drawing.Point(12, 389);
+            this.car_btn_save.Name = "car_btn_save";
+            this.car_btn_save.Size = new System.Drawing.Size(124, 49);
+            this.car_btn_save.TabIndex = 1;
+            this.car_btn_save.Text = "Autók-Mentés";
+            this.car_btn_save.UseVisualStyleBackColor = true;
+            this.car_btn_save.Click += new System.EventHandler(this.car_btn_save_Click);
             // 
             // exit_timer
             // 
@@ -87,7 +89,7 @@
             // 
             // car_btn
             // 
-            this.car_btn.Location = new System.Drawing.Point(142, 332);
+            this.car_btn.Location = new System.Drawing.Point(12, 332);
             this.car_btn.Name = "car_btn";
             this.car_btn.Size = new System.Drawing.Size(75, 40);
             this.car_btn.TabIndex = 4;
@@ -97,7 +99,7 @@
             // 
             // people_btn
             // 
-            this.people_btn.Location = new System.Drawing.Point(223, 332);
+            this.people_btn.Location = new System.Drawing.Point(93, 332);
             this.people_btn.Name = "people_btn";
             this.people_btn.Size = new System.Drawing.Size(85, 40);
             this.people_btn.TabIndex = 5;
@@ -105,26 +107,49 @@
             this.people_btn.UseVisualStyleBackColor = true;
             this.people_btn.Click += new System.EventHandler(this.people_btn_Click);
             // 
-            // button3
+            // store_btn
             // 
-            this.button3.Location = new System.Drawing.Point(314, 332);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 40);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "Autók";
-            this.button3.UseVisualStyleBackColor = true;
+            this.store_btn.Location = new System.Drawing.Point(184, 332);
+            this.store_btn.Name = "store_btn";
+            this.store_btn.Size = new System.Drawing.Size(75, 40);
+            this.store_btn.TabIndex = 6;
+            this.store_btn.Text = "Bolt";
+            this.store_btn.UseVisualStyleBackColor = true;
+            this.store_btn.Click += new System.EventHandler(this.store_btn_Click);
+            // 
+            // people_btn_save
+            // 
+            this.people_btn_save.Location = new System.Drawing.Point(142, 389);
+            this.people_btn_save.Name = "people_btn_save";
+            this.people_btn_save.Size = new System.Drawing.Size(161, 49);
+            this.people_btn_save.TabIndex = 7;
+            this.people_btn_save.Text = "Emberek-Mentés";
+            this.people_btn_save.UseVisualStyleBackColor = true;
+            this.people_btn_save.Click += new System.EventHandler(this.people_btn_save_Click);
+            // 
+            // store_btn_save
+            // 
+            this.store_btn_save.Location = new System.Drawing.Point(309, 389);
+            this.store_btn_save.Name = "store_btn_save";
+            this.store_btn_save.Size = new System.Drawing.Size(124, 49);
+            this.store_btn_save.TabIndex = 8;
+            this.store_btn_save.Text = "Bolt-Mentés";
+            this.store_btn_save.UseVisualStyleBackColor = true;
+            this.store_btn_save.Click += new System.EventHandler(this.store_btn_save_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(978, 450);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.store_btn_save);
+            this.Controls.Add(this.people_btn_save);
+            this.Controls.Add(this.store_btn);
             this.Controls.Add(this.people_btn);
             this.Controls.Add(this.car_btn);
             this.Controls.Add(this.reset_btn);
             this.Controls.Add(this.lblexit);
-            this.Controls.Add(this.btn_save);
+            this.Controls.Add(this.car_btn_save);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -137,13 +162,15 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button btn_save;
+        private System.Windows.Forms.Button car_btn_save;
         private System.Windows.Forms.Timer exit_timer;
         private System.Windows.Forms.Label lblexit;
         private System.Windows.Forms.Button reset_btn;
         private System.Windows.Forms.Button car_btn;
         private System.Windows.Forms.Button people_btn;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button store_btn;
+        private System.Windows.Forms.Button people_btn_save;
+        private System.Windows.Forms.Button store_btn_save;
     }
 }
 
