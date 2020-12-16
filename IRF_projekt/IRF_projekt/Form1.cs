@@ -60,7 +60,19 @@ namespace IRF_projekt
             sfd.DefaultExt = "csv";
             sfd.AddExtension = true;
 
+            if (sfd.ShowDialog() != DialogResult.OK) return;
 
+            using (FileStream fs = new FileStream(sfd.FileName, FileMode.Create))
+            {
+                using (StreamWriter sw = new StreamWriter(fs, Encoding.UTF8))
+                {
+                    foreach (cars car in Auto_data)
+                    {
+                        sw.WriteLine("{0};{1};{2};{3}",
+                        car.Gyártó, car.Típus, car.Szín, car.Gyártás_éve);
+                    }
+                }
+            }
         }
     }
 }
