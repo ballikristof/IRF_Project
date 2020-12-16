@@ -34,6 +34,9 @@
             this.exit_timer = new System.Windows.Forms.Timer(this.components);
             this.lblexit = new System.Windows.Forms.Label();
             this.reset_btn = new System.Windows.Forms.Button();
+            this.car_btn = new System.Windows.Forms.Button();
+            this.people_btn = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,11 +85,42 @@
             this.reset_btn.UseVisualStyleBackColor = true;
             this.reset_btn.Click += new System.EventHandler(this.reset_btn_Click);
             // 
+            // car_btn
+            // 
+            this.car_btn.Location = new System.Drawing.Point(142, 332);
+            this.car_btn.Name = "car_btn";
+            this.car_btn.Size = new System.Drawing.Size(75, 40);
+            this.car_btn.TabIndex = 4;
+            this.car_btn.Text = "Autók";
+            this.car_btn.UseVisualStyleBackColor = true;
+            this.car_btn.Click += new System.EventHandler(this.car_btn_Click);
+            // 
+            // people_btn
+            // 
+            this.people_btn.Location = new System.Drawing.Point(223, 332);
+            this.people_btn.Name = "people_btn";
+            this.people_btn.Size = new System.Drawing.Size(85, 40);
+            this.people_btn.TabIndex = 5;
+            this.people_btn.Text = "Emberek";
+            this.people_btn.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(314, 332);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 40);
+            this.button3.TabIndex = 6;
+            this.button3.Text = "Autók";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(978, 450);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.people_btn);
+            this.Controls.Add(this.car_btn);
             this.Controls.Add(this.reset_btn);
             this.Controls.Add(this.lblexit);
             this.Controls.Add(this.btn_save);
@@ -106,6 +140,9 @@
         private System.Windows.Forms.Timer exit_timer;
         private System.Windows.Forms.Label lblexit;
         private System.Windows.Forms.Button reset_btn;
+        private System.Windows.Forms.Button car_btn;
+        private System.Windows.Forms.Button people_btn;
+        private System.Windows.Forms.Button button3;
     }
 }
 

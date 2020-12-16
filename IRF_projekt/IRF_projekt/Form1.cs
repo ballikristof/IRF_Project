@@ -24,23 +24,7 @@ namespace IRF_projekt
             exit_timer.Interval = 1000;
             exit_timer.Start();
             lblexit.Text = counter.ToString();
-            XmlDocument xml = new XmlDocument();
-            xml.Load("autok.xml");
-            dataGridView1.DataSource = Auto_data;
             
-
-            foreach (XmlElement element in xml.DocumentElement)
-            {
-                var car = new cars();
-                Auto_data.Add(car);
-
-                car.Gyártó = element.GetAttribute("marka");
-
-                var childElement = (XmlElement)element.ChildNodes[0];
-                car.Típus = childElement.GetAttribute("tipus");
-                car.Szín = childElement.GetAttribute("szin");
-                car.Gyártás_éve = childElement.GetAttribute("evjarat");
-            }
         }
 
         private void exit_timer_Tick(object sender, EventArgs e)
@@ -80,6 +64,27 @@ namespace IRF_projekt
         private void reset_btn_Click(object sender, EventArgs e)
         {
             counter = 300;
+        }
+
+        private void car_btn_Click(object sender, EventArgs e)
+        {
+            XmlDocument xml = new XmlDocument();
+            xml.Load("autok.xml");
+            dataGridView1.DataSource = Auto_data;
+
+
+            foreach (XmlElement element in xml.DocumentElement)
+            {
+                var car = new cars();
+                Auto_data.Add(car);
+
+                car.Gyártó = element.GetAttribute("marka");
+
+                var childElement = (XmlElement)element.ChildNodes[0];
+                car.Típus = childElement.GetAttribute("tipus");
+                car.Szín = childElement.GetAttribute("szin");
+                car.Gyártás_éve = childElement.GetAttribute("evjarat");
+            }
         }
     }
 }
