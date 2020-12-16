@@ -24,9 +24,22 @@ namespace IRF_projekt
             exit_timer.Interval = 1000;
             exit_timer.Start();
             lblexit.Text = counter.ToString();
-            DataSet dataset = new DataSet();
-            dataset.ReadXml(@"C:\Temp\autok.xml");
-            dataGridView1.DataSource = dataset.Tables[0];
+            XmlDocument xml = new XmlDocument();
+            xml.Load("autok.xml");
+            dataGridView1.DataSource = Auto_data;
+
+            foreach (XmlElement element in xml.DocumentElement)
+            {
+                var car = new cars();
+                Auto_data.Add(car);
+
+                car.Gyártó = element.GetAttribute("marka");
+
+                var childElement = (XmlElement)element.ChildNodes[0];
+                car.Típus = childElement.GetAttribute("tipus");
+                car.Szín = childElement.GetAttribute("szin");
+                car.Gyártás_éve = childElement.GetAttribute("evjarat");
+            }
         }
 
         private void exit_timer_Tick(object sender, EventArgs e)
@@ -36,6 +49,18 @@ namespace IRF_projekt
             if (counter == 0)
                 this.Close();
                 
+        }
+
+        private void btn_save_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+
+            sfd.InitialDirectory = Application.StartupPath;
+            sfd.Filter = "Comma Seperated Values (*.csv)|*.csv";
+            sfd.DefaultExt = "csv";
+            sfd.AddExtension = true;
+
+
         }
     }
 }

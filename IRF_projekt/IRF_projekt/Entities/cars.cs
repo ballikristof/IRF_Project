@@ -8,9 +8,9 @@ namespace IRF_projekt.Entities
 {
     class cars
     {
-        public string make { get; set; }
-        public string type { get; set; }
-        public int year { get; set; }
-        public string color { get; set; }
+        public string Gyártó { get; set; }
+        public string Típus { get; set; }
+        public string Gyártás_éve { get; set; }
+        public string Szín { get; set; }
     }
 }

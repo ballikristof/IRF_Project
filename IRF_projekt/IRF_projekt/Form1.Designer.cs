@@ -39,7 +39,7 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 45);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
@@ -48,12 +48,13 @@
             // 
             // btn_save
             // 
-            this.btn_save.Location = new System.Drawing.Point(12, 299);
+            this.btn_save.Location = new System.Drawing.Point(12, 323);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(75, 33);
             this.btn_save.TabIndex = 1;
             this.btn_save.Text = "Mentés";
             this.btn_save.UseVisualStyleBackColor = true;
+            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
             // exit_timer
             // 
