@@ -8,9 +8,9 @@ namespace IRF_projekt.Entities
 {
     class cars
     {
-        public int ev { get; set; }
-        public string color { get; set; }
         public string make { get; set; }
         public string type { get; set; }
+        public int year { get; set; }
+        public string color { get; set; }
     }
 }

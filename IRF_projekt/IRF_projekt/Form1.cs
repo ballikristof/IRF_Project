@@ -9,12 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 using System.IO;
+using IRF_projekt.Entities;
 
 namespace IRF_projekt
 {
     public partial class Form1 : Form
     {
         public int counter = 300;
+        BindingList<cars> Auto_data = new BindingList<cars>();
         public Form1()
         {
             InitializeComponent();
@@ -22,16 +24,9 @@ namespace IRF_projekt
             exit_timer.Interval = 1000;
             exit_timer.Start();
             lblexit.Text = counter.ToString();
-            XmlDocument xml = new XmlDocument();
-            xml.Load("autok.xml");
-
-            
-            
-        }
-
-        private void xmlbetoltes()
-        {
-
+            DataSet dataset = new DataSet();
+            dataset.ReadXml(@"C:\Temp\autok.xml");
+            dataGridView1.DataSource = dataset.Tables[0];
         }
 
         private void exit_timer_Tick(object sender, EventArgs e)
