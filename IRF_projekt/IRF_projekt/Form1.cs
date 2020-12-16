@@ -27,6 +27,7 @@ namespace IRF_projekt
             XmlDocument xml = new XmlDocument();
             xml.Load("autok.xml");
             dataGridView1.DataSource = Auto_data;
+            
 
             foreach (XmlElement element in xml.DocumentElement)
             {
@@ -48,7 +49,8 @@ namespace IRF_projekt
             lblexit.Text = counter.ToString();
             if (counter == 0)
                 this.Close();
-                
+            
+            
         }
 
         private void btn_save_Click(object sender, EventArgs e)
@@ -73,6 +75,11 @@ namespace IRF_projekt
                     }
                 }
             }
+        }
+
+        private void reset_btn_Click(object sender, EventArgs e)
+        {
+            counter = 300;
         }
     }
 }

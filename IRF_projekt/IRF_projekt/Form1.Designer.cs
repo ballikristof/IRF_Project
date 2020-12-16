@@ -33,6 +33,7 @@
             this.btn_save = new System.Windows.Forms.Button();
             this.exit_timer = new System.Windows.Forms.Timer(this.components);
             this.lblexit = new System.Windows.Forms.Label();
+            this.reset_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,11 +72,22 @@
             this.lblexit.TabIndex = 2;
             this.lblexit.Text = "label1";
             // 
+            // reset_btn
+            // 
+            this.reset_btn.Location = new System.Drawing.Point(801, 86);
+            this.reset_btn.Name = "reset_btn";
+            this.reset_btn.Size = new System.Drawing.Size(75, 43);
+            this.reset_btn.TabIndex = 3;
+            this.reset_btn.Text = "Reset";
+            this.reset_btn.UseVisualStyleBackColor = true;
+            this.reset_btn.Click += new System.EventHandler(this.reset_btn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(978, 450);
+            this.Controls.Add(this.reset_btn);
             this.Controls.Add(this.lblexit);
             this.Controls.Add(this.btn_save);
             this.Controls.Add(this.dataGridView1);
@@ -93,6 +105,7 @@
         private System.Windows.Forms.Button btn_save;
         private System.Windows.Forms.Timer exit_timer;
         private System.Windows.Forms.Label lblexit;
+        private System.Windows.Forms.Button reset_btn;
     }
 }
 
