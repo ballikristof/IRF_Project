@@ -83,6 +83,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="autok.xml" />
+    <Content Include="emberek.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

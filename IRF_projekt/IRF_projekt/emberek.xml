@@ -1,0 +1,13 @@
+<?xml version='1.0' ?>
+
+<emberek>
+	<ember kor="23">
+		<info vezeteknev="Nagy" keresztnev="Lajos" email="nagy.lajos@gmail.com"></info>
+	</ember>
+	<ember kor="36">
+		<info vezeteknev="Kovács" keresztnev="Mirtill" email="kovacs.mirtill@gmail.com"></info>
+	</ember>
+	<ember kor="57">
+		<info vezeteknev="Tóth" keresztnev="Péter" email="toth.peter@gmail.com"></info>
+	</ember>
+</emberek>

@@ -103,6 +103,7 @@
             this.people_btn.TabIndex = 5;
             this.people_btn.Text = "Emberek";
             this.people_btn.UseVisualStyleBackColor = true;
+            this.people_btn.Click += new System.EventHandler(this.people_btn_Click);
             // 
             // button3
             // 

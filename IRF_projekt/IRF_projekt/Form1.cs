@@ -17,6 +17,7 @@ namespace IRF_projekt
     {
         public int counter = 300;
         BindingList<cars> Auto_data = new BindingList<cars>();
+        BindingList<people> People_data = new BindingList<people>();
         public Form1()
         {
             InitializeComponent();
@@ -68,6 +69,8 @@ namespace IRF_projekt
 
         private void car_btn_Click(object sender, EventArgs e)
         {
+
+            Auto_data.Clear();
             XmlDocument xml = new XmlDocument();
             xml.Load("autok.xml");
             dataGridView1.DataSource = Auto_data;
@@ -84,6 +87,28 @@ namespace IRF_projekt
                 car.Típus = childElement.GetAttribute("tipus");
                 car.Szín = childElement.GetAttribute("szin");
                 car.Gyártás_éve = childElement.GetAttribute("evjarat");
+            }
+        }
+
+        private void people_btn_Click(object sender, EventArgs e)
+        {
+            People_data.Clear();
+            XmlDocument xml = new XmlDocument();
+            xml.Load("emberek.xml");
+            dataGridView1.DataSource = People_data;
+
+
+            foreach (XmlElement element in xml.DocumentElement)
+            {
+                var person = new people();
+                People_data.Add(person);
+
+                person.Életkor = element.GetAttribute("kor");
+
+                var childElement = (XmlElement)element.ChildNodes[0];
+                person.Vezetéknév = childElement.GetAttribute("vezeteknev");
+                person.Keresztnév = childElement.GetAttribute("keresztnev");
+                person.Email = childElement.GetAttribute("email");
             }
         }
     }
